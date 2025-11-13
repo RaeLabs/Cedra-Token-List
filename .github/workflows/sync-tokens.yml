@@ -19,15 +19,32 @@ jobs:
           sleep 30
       
       - name: Sync tokens to database
+        id: sync
         run: |
-          curl -X POST https://api.avera.finance/tokens/sync \
+          RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X POST https://api.avera.finance/tokens/sync \
             -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
-            -H "Content-Type: application/json" \
-            -w "\nHTTP Status: %{http_code}\n"
-        
-      - name: Check sync result
-        if: failure()
-        run: |
-          echo "Sync failed! Check the response above."
-          exit 1
+            -H "Content-Type: application/json")
+          
+          HTTP_STATUS=$(echo "$RESPONSE" | grep -o "HTTP_STATUS:[0-9]*" | cut -d: -f2)
+          BODY=$(echo "$RESPONSE" | sed '/HTTP_STATUS:/d')
+          
+          echo "HTTP Status: $HTTP_STATUS"
+          echo "Response: $BODY"
+          
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Sync failed with HTTP status $HTTP_STATUS"
+            echo "$BODY" | jq '.' || echo "$BODY"
+            exit 1
+          fi
+          
+          # Check if response indicates success
+          SUCCESS=$(echo "$BODY" | jq -r '.success // false' 2>/dev/null || echo "false")
+          if [ "$SUCCESS" != "true" ]; then
+            echo "Sync returned unsuccessful response:"
+            echo "$BODY" | jq '.' || echo "$BODY"
+            exit 1
+          fi
+          
+          echo "Sync completed successfully!"
+          echo "$BODY" | jq '.'
 
