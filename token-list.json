@@ -1,2 +1,19 @@
-[]
-
+   [
+     {
+       "networkId": 2,
+       "tokenAddress": "0x1::cedra_coin::CedraCoin",
+       "faAddress": "0x000000000000000000000000000000000000000000000000000000000000000a",
+       "name": "Cedra Coin",
+       "symbol": "CEDRA",
+       "decimals": 8,
+       "bridge": null,
+       "averaSymbol": "CEDRA",
+       "logoUrl": "https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/main/logos/cedra.svg",
+       "websiteUrl": "https://cedra.network",
+       "averaUI": true,
+       "averaTags": ["Native", "Verified"],
+       "averaIndex": 1,
+       "coinGeckoId": null,
+       "coinMarketCapId": null
+     }
+   ]
