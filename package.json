@@ -1,0 +1,12 @@
+{
+  "name": "@cedra/token-list",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "description": "Token list by Rae Labs for Cedra blockchain",
+  "main": "token-list.json",
+  "author": "Rae Labs",
+  "license": "MIT",
+  "types": "types.ts"
+}
+

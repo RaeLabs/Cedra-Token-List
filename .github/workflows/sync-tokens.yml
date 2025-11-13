@@ -1,0 +1,33 @@
+name: Sync Tokens to Database
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'token-list.json'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Netlify deployment
+        run: |
+          echo "Waiting 30 seconds for Netlify to deploy..."
+          sleep 30
+      
+      - name: Sync tokens to database
+        run: |
+          curl -X POST https://api.avera.finance/tokens/sync \
+            -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
+            -H "Content-Type: application/json" \
+            -w "\nHTTP Status: %{http_code}\n"
+        
+      - name: Check sync result
+        if: failure()
+        run: |
+          echo "Sync failed! Check the response above."
+          exit 1
+

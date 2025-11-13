@@ -1,0 +1,19 @@
+node_modules
+dist
+.env
+*.log
+
+# Build artifacts
+*.tsbuildinfo
+.cache
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
