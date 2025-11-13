@@ -1,4 +1,4 @@
-# Cedra: Token List for Cedra Blockchain
+# Token List for Cedra Blockchain
 
 ## Overview
 
