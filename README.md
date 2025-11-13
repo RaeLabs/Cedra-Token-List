@@ -32,15 +32,16 @@ To add your token to the Cedra Token List, follow these steps:
 
 Fork the repository on GitHub to create your own copy.
 
-### 2. Add Token Icon
+### 2. Add Token Icon (Optional)
 
-Add the token_symbol.svg file for the token in the logos folder in your forked repository. Ensure it's .svg or ~100x100 pixels in .png format and has a unique symbol not used by any existing token.
+Add the token logo file (e.g., `token_symbol.svg` or `token_symbol.png`) to the `logos` folder. Ensure it's .svg or ~100x100 pixels in .png format. The logo URL should follow this format:
+```
+https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/main/logos/token_symbol.svg
+```
 
-### 3. Update `submit-token-request.ts`
+### 3. Update `token-list.json`
 
-Add a `SubmitTokenRequestInfo` object at the end of `submit-token-request.ts` list.
-
-Provide the following details:
+Add a `TokenInfo` object to the `token-list.json` array. Provide the following details:
 
 - `networkId`: The network ID associated with the token (Default: 2 for Cedra Testnet, 1 for Mainnet when available)
 - `tokenAddress`: The complete address of the token as per the Cedra Coin Standard (Legacy)
@@ -48,8 +49,13 @@ Provide the following details:
 - `name`: The on-chain registered name of the token
 - `symbol`: The on-chain registered symbol of the token
 - `decimals`: The number of decimal places of the token
-- `logoUrl`: The URL for the token's logo (the logo should be added to the logos folder in your repository to get the correct link)
+- `bridge`: The bridge associated with the token, if applicable (`"LayerZero"`, `"Wormhole"`, `"Celer"`, `"Echo"`, or `null`)
+- `averaSymbol`: Similar to symbol, but with prefixes based on the bridge: `lz` for LayerZero, `wh` for Wormhole, `ce` for Celer (or same as `symbol` if no bridge)
+- `logoUrl`: The URL for the token's logo (use the GitHub raw URL if added to logos folder)
 - `websiteUrl`: The official website URL of the token (optional)
+- `averaUI`: Set to `true` to display the token in Avera DEX UI
+- `averaTags`: Array of tags (e.g., `["Native", "Verified"]`)
+- `averaIndex`: The default sorting order of tokens within the Avera UI (optional)
 - `coinGeckoId`: The CoinGecko ID of the token (optional)
 - `coinMarketCapId`: The CoinMarketCap ID of the token (optional)
 
@@ -59,7 +65,7 @@ Commit your changes with a descriptive message explaining the modifications made
 
 ### 5. Make a Pull Request
 
-Navigate to your forked repository, open a pull request, and submit it for review.
+Push your changes to your fork and open a pull request to the main repository. Once the PR is merged, the token will be automatically synced to the database via GitHub Actions.
 
 ## Cedra Token List Response
 
@@ -83,8 +89,7 @@ Cedra Token List Response object consists of the following fields:
 
 ## API Endpoints
 
-- `GET /api/tokens` - Get all tokens
-- `GET /api/tokens/:address` - Get token by address
-- `GET /api/tokens.json` - Get token list as JSON file
-- `POST /api/tokens` - Submit token request (requires authentication)
+- `GET /tokens` - Get all tokens (with optional query parameters: `networkId`, `averaUI`, `page`, `limit`)
+- `GET /tokens.json` - Get token list as JSON file (returns tokens with `averaUI: true` by default)
+- `POST /tokens/submit` - Submit token request via API (stores in `token_requests` table for manual approval)
 
