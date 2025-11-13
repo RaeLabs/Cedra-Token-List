@@ -8,7 +8,7 @@
     "decimals": 8,
     "bridge": null,
     "averaSymbol": "CEDRA",
-    "logoUrl": "https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/main/logos/cedra.svg",
+    "logoUrl": "https://github.com/RaeLabs/Cedra-Token-List/blob/main/logos/cedra.svg",
     "websiteUrl": "https://cedra.network",
     "averaUI": true,
     "averaTags": ["Native", "Verified"],
