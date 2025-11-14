@@ -15,5 +15,59 @@
     "averaIndex": 1,
     "coinGeckoId": null,
     "coinMarketCapId": null
+  },
+
+  {
+    "networkId": 2,
+    "tokenAddress": null,
+    "faAddress": "0x9b261e2dc82dfda3865f97f6a71dafdedef76023599805aade1591495c0bd543",
+    "name": "Avera",
+    "symbol": "AVA",
+    "decimals": 8,
+    "bridge": null,
+    "averaSymbol": "AVA",
+    "logoUrl": "https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/refs/heads/main/logos/ava.svg",
+    "websiteUrl": "https://avera.finance",
+    "averaUI": true,
+    "averaTags": ["Native", "Verified"],
+    "averaIndex": 2,
+    "coinGeckoId": null,
+    "coinMarketCapId": null
+  },
+
+  {
+    "networkId": 2,
+    "tokenAddress": null,
+    "faAddress": "0xf665e4f033dacd20ae6b101b1ccc5308188ec3b498340999e283fe789cf4bdcc",
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "decimals": 6,
+    "bridge": null,
+    "averaSymbol": "USDT",
+    "logoUrl": "https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/refs/heads/main/logos/USDT.svg",
+    "websiteUrl": "https://tether.to/",
+    "averaUI": true,
+    "averaTags": ["Native", "Verified"],
+    "averaIndex": 3,
+    "coinGeckoId": null,
+    "coinMarketCapId": null
+  },
+
+  {
+    "networkId": 2,
+    "tokenAddress": null,
+    "faAddress": "0x36363177b71530fe6a3f1468215f70e42eb92ae12b251214ebce50e9a7bc9327",
+    "name": "USDC",
+    "symbol": "USDC",
+    "decimals": 6,
+    "bridge": null,
+    "averaSymbol": "USDC",
+    "logoUrl": "https://raw.githubusercontent.com/RaeLabs/Cedra-Token-List/refs/heads/main/logos/USDC.svg",
+    "websiteUrl": "https://www.usdc.com/",
+    "averaUI": true,
+    "averaTags": ["Native", "Verified"],
+    "averaIndex": 4,
+    "coinGeckoId": null,
+    "coinMarketCapId": null
   }
 ]
