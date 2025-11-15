@@ -20,7 +20,7 @@
   {
     "networkId": 2,
     "tokenAddress": null,
-    "faAddress": "0x9b261e2dc82dfda3865f97f6a71dafdedef76023599805aade1591495c0bd543",
+    "faAddress": "0xd96ef386899668908ff3c66d4d33b2ef5fe0c5504f3e5515a9784f23c7aa869d",
     "name": "Avera",
     "symbol": "AVA",
     "decimals": 8,
@@ -38,7 +38,7 @@
   {
     "networkId": 2,
     "tokenAddress": null,
-    "faAddress": "0xf665e4f033dacd20ae6b101b1ccc5308188ec3b498340999e283fe789cf4bdcc",
+    "faAddress": "0xa022188d19984be62bd426bf4db07da5d8a2ddd81d4e72692b7d3db4ae7ee4bf",
     "name": "Tether USD",
     "symbol": "USDT",
     "decimals": 6,
@@ -56,7 +56,7 @@
   {
     "networkId": 2,
     "tokenAddress": null,
-    "faAddress": "0x36363177b71530fe6a3f1468215f70e42eb92ae12b251214ebce50e9a7bc9327",
+    "faAddress": "0x9b3de2ddc98f2fd28bb6f6808bab70d66e248a2907df049691a38cbd226231f6",
     "name": "USDC",
     "symbol": "USDC",
     "decimals": 6,
